@@ -1,0 +1,38 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 10, 10, 0.815);
+    width: 100%;
+    -webkit-box-shadow: 1px -2px 5px 1px rgba(255, 255, 255, 0.67); 
+      box-shadow: 1px -2px 5px #02a6e2;
+      max-height: 30px;
+
+      .contact-title{
+        font-weight: 800;
+        font-size: 22px;
+        color: white;        
+      }
+
+      .contacto-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 2rem;
+
+        .wapp-ref{
+            margin: 1rem;
+        }
+      
+        .wapp-img , .gmail-img{      
+              width: 30px;
+              height: 30px;
+        }
+    }
+  
+}

@@ -1,0 +1,40 @@
+
+.header-Container{
+    background-color: rgba(10, 10, 10, 0.815);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 1rem;
+    align-items: center;
+    
+     .title{
+        font-size: 35px;
+        font-weight: 700;
+     }
+
+     nav{
+        float: left;
+    }
+    
+    nav ul{
+        margin: 0;
+    }
+    
+    nav ul li {
+        float: left;
+        font-size: 18px;
+        list-style: none;
+      }
+      
+      nav ul li a {
+        display: block; 
+        padding: 20px;
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      nav ul li:hover {
+        background: #00afeffd;
+      }
+}
