@@ -28,7 +28,7 @@
       font-size: 30px;
   }
 
-  .eventos-btn{
+  .events-btn{
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
@@ -38,10 +38,15 @@
     font-weight: 700;
     margin: 1rem;
     cursor: pointer;
+
+     a {
+       text-decoration: none;
+       color: white;
+     }
 }
 
-.eventos-btn:hover{
+.events-btn:hover{
   background-color: #0db0ebcc;
-}
+  }
 
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoImg from '../../Resources/img/logo.png'
 import '../../Styles/MainPage/Main.scss'
 
@@ -7,7 +8,9 @@ const Main = () => {
           <img className="logoImg" src={logoImg} alt="logoImg" />
           <h1 className="h1-title">LIGHT WEIGHT BABYYYYY!!!</h1>
           <h2 className="h2-title">YES SIR!</h2>
-          <button className="eventos-btn" type="button">EVENTS</button>
+          <div className='events-btn'>
+            <Link to='/'>EVENTS</Link>
+          </div>
         </main>
 };
 

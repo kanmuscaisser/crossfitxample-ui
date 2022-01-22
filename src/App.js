@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {Routes, Route} from 'react-router-dom'
 import MainPage from './Components/MainPage/MainPage';
+import Events from './Components/Events/Events';
 
 function App() {
   return (
-    <>
-     <MainPage />
-    </>
+    <Routes>
+      <Route path='/' element={<MainPage/>} />
+      <Route path='/Events' element={<Events/>}/>
+    </Routes>
   );
 }
 
