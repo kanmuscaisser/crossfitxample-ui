@@ -1,0 +1,78 @@
+@media screen and (max-width:850px) {
+
+  html,body{
+         height: 100% !important;
+    }
+
+
+    .header-Container{
+        .title{
+            font-size: 20px;
+        }
+
+         nav ul {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        nav ul li {            
+            font-size: 15px;
+            list-style: none;
+            font-weight: bolder;
+          }
+
+
+        .lineOptions{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.1rem;
+        }
+
+        .line {
+            background-color: rgb(44, 139, 194);
+            width: 1.5rem;
+            height: 0.2rem;            
+        }
+
+        .slide-Menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: fixed;
+            top: 3rem;
+            right: 0;
+            width: 38vw;
+            background-color: transparent;
+            padding:0;
+            z-index: 1;
+        }
+    
+        .slide-MenuOff{
+            display: none;
+        }
+    
+    }
+
+    main{
+        h1,h2{
+            display: none;
+        }
+
+        .logoImg{
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    footer .contact-title {
+        font-weight: 600;
+        font-size: 16px;
+        color: white;
+        margin: 0;
+    }
+}
