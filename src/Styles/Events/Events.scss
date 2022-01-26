@@ -1,0 +1,67 @@
+.events-Main{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    .eventsOptions-container{
+        width: 750px;
+        min-width: 200px;
+        h1{
+            font-size: 60px;
+            text-align: center;
+            color: rgb(251, 251, 251);
+        }
+
+        .options-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0 1rem;
+            align-items: center;
+        }
+        nav{
+            float: left;
+        }
+        
+        nav ul{
+            margin: 0;
+        }
+        
+        nav ul li {
+            float: left;
+            font-size: 25px;
+            list-style: none;
+            cursor: pointer;
+            padding: 0 1rem;
+            height: 4rem;
+            position: relative;
+            color: rgb(200, 203, 206);
+          }
+
+          li::after{
+            content: "";
+            position: absolute;
+            background-color: rgb(136, 209, 251);
+            height: 10px;
+            width: 0;
+            left: 0;
+            bottom: 0px;
+            transition: 0.4s;
+          }
+
+          li:hover::after{
+              width: 100%;
+          }
+
+          li:hover{
+              color: white;
+          }
+
+          hr{
+              margin-top: 0;
+          }
+   }
+}
