@@ -1,0 +1,24 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.search-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+
+    input{
+        padding: 10px 5rem;
+        border-radius: 5px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-image: url(../../Resources/img/dumbell.png);
+        background-repeat: no-repeat;
+        background-position:center;
+        background-position-x: 20rem;
+        text-align: center;
+    }
+
+}
