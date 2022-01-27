@@ -1,5 +1,4 @@
 .events-Main{
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,12 +6,12 @@
     color: white;
 
     .eventsOptions-container{
-        width: 750px;
+        width: 80%;
         min-width: 200px;
         h1{
             font-size: 60px;
             text-align: center;
-            color: rgb(251, 251, 251);
+            color: rgb(0, 0, 0);
         }
 
         .options-container{
@@ -38,13 +37,13 @@
             padding: 0 1rem;
             height: 4rem;
             position: relative;
-            color: rgb(200, 203, 206);
+            color: rgb(83, 83, 83);
           }
 
           li::after{
             content: "";
             position: absolute;
-            background-color: rgb(136, 209, 251);
+            background-color: rgba(10, 10, 10, 0.815);
             height: 10px;
             width: 0;
             left: 0;
@@ -57,7 +56,7 @@
           }
 
           li:hover{
-              color: white;
+              color: rgb(0, 0, 0);
           }
 
           hr{

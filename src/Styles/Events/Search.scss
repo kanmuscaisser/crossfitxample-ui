@@ -11,13 +11,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     input{
         padding: 10px 5rem;
         border-radius: 5px;
-        font-size: 18px;
-        border: none;
+        font-size: 20px;
+        border: 1px solid #00000063;
         outline: none;
         background-image: url(../../Resources/img/dumbell.png);
         background-repeat: no-repeat;
         background-position:center;
-        background-position-x: 20rem;
+        background-position-x: 21rem;
         text-align: center;
     }
 
