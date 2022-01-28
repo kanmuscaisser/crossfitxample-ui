@@ -6,7 +6,11 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 0 1rem;
-    align-items: center;
+    align-items: center;/* 
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; */
     
      .title{
         font-size: 35px;

@@ -32,7 +32,7 @@ const Events = () => {
           searchEvent={searchEvent}
           events={eventsData}
           render={event => (
-            <Event event={event} />
+            <Event event={event} key={event.id} />
           )}
         />
       </main>

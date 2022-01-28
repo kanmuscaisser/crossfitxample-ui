@@ -1,0 +1,16 @@
+.display-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 420px);
+    margin: 3rem 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80%;
+    background-color: rgb(253, 252, 252);
+    color: black;
+    border-radius: 10px;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 2px 5px 1px #000000a6; 
+    box-shadow: 0px 2px 5px 1px #0000009a;
+    row-gap: 2rem;
+}
