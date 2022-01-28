@@ -9,7 +9,7 @@ const Main = () => {
           <h1 className="h1-title">LIGHT WEIGHT BABYYYYY!!!</h1>
           <h2 className="h2-title">YES SIR!</h2>
           <div className='events-btn'>
-            <Link to='/Events'>EVENTS</Link>
+            <Link to='/events'>EVENTS</Link>
           </div>
         </main>
 };

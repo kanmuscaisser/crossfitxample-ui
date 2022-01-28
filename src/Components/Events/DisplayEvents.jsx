@@ -1,5 +1,6 @@
 import React from 'react';
 import  '../../Styles/Events/Display.scss'
+import NotFound from '../Utils/NotFound';
 
 const DisplayEvents = (props) => {
     let events = props.events
@@ -11,8 +12,9 @@ const DisplayEvents = (props) => {
             event.address.toLowerCase().indexOf(props.searchEvent.toString().toLowerCase()) > -1)
     }
 
+    console.log(events)
     return <section className='display-section'>
-        {events.map(event => props.render(event))}
+        {events.length !== 0?events.map(event => props.render(event)): <NotFound name = 'Events' />}
     </section>
 };
 
