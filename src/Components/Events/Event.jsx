@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styles/Events/Event.scss'
 
-const Event = ({ event }) => {
-
+const Event = ({ event }) => {  
   return <div className='event-card'>
     <h1 className='event-title'>{event.name}</h1>
     <div className='img-container'>
