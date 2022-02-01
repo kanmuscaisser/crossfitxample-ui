@@ -11,7 +11,6 @@ const EventsOptions = ({ setEventsData, searchEvent, setSearchEvent, eventsData 
         const month = date.getMonth() + 1
         const eventOption = e.target.innerText
 
-
         switch (eventOption) {
             case 'All':  getEvents(setEventsData)
                 break;

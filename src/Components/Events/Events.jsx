@@ -3,6 +3,7 @@ import Header from '../MainPage/Header';
 import Event from './Event';
 import DisplayEvents from './DisplayEvents';
 import '../../Styles/Events/Events.scss'
+import '../../Styles/Events/Mobile.scss'
 import EventsOptions from './EventsOptions';
 import { getEvents } from '../../Util/httpEvents';
 
