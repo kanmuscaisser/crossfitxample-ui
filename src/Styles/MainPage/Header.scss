@@ -6,16 +6,25 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 0 1rem;
-    align-items: center;/* 
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0; */
-    
-     .title{
-        font-size: 35px;
-        font-weight: 700;
-     }
+    align-items: center;
+
+    .titleLogo-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 1rem;
+
+      .crossfitLogo{
+        margin-right: 1rem;
+        object-fit: cover;
+        width: 150px;
+      }
+      
+       .title{
+          font-size: 35px;
+          font-weight: 700;
+       }
+    }
 
      nav{
         float: left;
@@ -29,6 +38,7 @@
         float: left;
         font-size: 18px;
         list-style: none;
+        transition: 0.6s;
       }
       
       nav ul li a {
