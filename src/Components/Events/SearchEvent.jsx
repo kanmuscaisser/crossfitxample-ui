@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/Events/Search.scss'
+import '../../styles/Events/Search.scss'
 
 const SearchEvent = ({ searchEvent, setSearchEvent }) => {
     return <div className='search-container'>

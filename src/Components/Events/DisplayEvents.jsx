@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/Events/Display.scss'
+import '../../styles/Events/Display.scss'
 import NotFound from '../Utils/NotFound';
 
 const DisplayEvents = (props) => {

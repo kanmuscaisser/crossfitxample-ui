@@ -1,7 +1,7 @@
 import React , {useState} from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../Resources/img/crossfit-logo.png'
-import '../../Styles/MainPage/Header.scss'
+import logo from '../../resources/img/crossfit-logo.png'
+import '../../styles/MainPage/Header.scss'
 
 const Header = () => {
     const [slideClick, setSlideClick] = useState(false)

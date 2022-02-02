@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImg from '../../Resources/img/logo.png'
-import '../../Styles/MainPage/Main.scss'
+import logoImg from '../../resources/img/logo.png'
+import '../../styles/MainPage/Main.scss'
 
 const Main = () => {
   return <main className="main-Container">

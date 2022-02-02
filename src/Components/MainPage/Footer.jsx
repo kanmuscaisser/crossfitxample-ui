@@ -1,7 +1,7 @@
 import React from 'react';
-import wappLogo from '../../Resources/img/whatsapp.png'
-import gmailLogo from '../../Resources/img/gmail.png'
-import '../../Styles/MainPage/Footer.scss'
+import wappLogo from '../../resources/img/whatsapp.png'
+import gmailLogo from '../../resources/img/gmail.png'
+import '../../styles/MainPage/Footer.scss'
 
 const Footer = () => {
   return  <footer className="borrador-Footer">

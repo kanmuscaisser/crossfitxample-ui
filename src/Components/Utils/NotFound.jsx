@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/Events/Display.scss'
+import '../../styles/Events/Display.scss'
 
 const NotFound = ({ name }) => {
     return <div className='notFound-container'>

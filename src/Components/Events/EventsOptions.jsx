@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import SearchEvent from './SearchEvent';
-import { getEvents } from '../../Util/httpEvents';
+import { getEvents } from '../../util/httpEvents';
 
 const EventsOptions = ({ setEventsData, searchEvent, setSearchEvent, eventsData }) => {
     const events = eventsData.data || []
