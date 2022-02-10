@@ -4,8 +4,7 @@ import { render } from '@testing-library/react'
 import NotFound from './NotFound'
 
 test('renders content', ()=> {
-    const name = 'nombre error'
+    const name = '404'
     const component = render(<NotFound name={name}/>)
-
-    console.log(component)
+    component.getByText(name + ' not Found')
 })

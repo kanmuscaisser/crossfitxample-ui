@@ -13,7 +13,6 @@
     }
 
     .img-container{
-        cursor: pointer;
         height: 185px;
         img{
             width: 250px;
@@ -53,7 +52,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        .register-link{
+        .register-link, .detail-link{
             text-decoration: none;
             color: rgb(255, 255, 255);
             padding: 1rem;
@@ -65,7 +64,7 @@
         }
     
     
-        .register-link:hover{
+        .register-link:hover, .detail-link:hover{
            background-color: #0db0ebcc;
            transition: 0.4s;
         }

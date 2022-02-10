@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import SearchEvent from './SearchEvent';
 import { getEvents } from '../../util/httpEvents';
+import EventsDataContext from '../../context/context.js';
 
-const EventsOptions = ({ setEventsData, searchEvent, setSearchEvent, eventsData }) => {
-    const events = eventsData.data || []
+const EventsOptions = () => {
+    const { searchEvent, setSearchEvent, eventsData, setEventsData } = useContext(EventsDataContext)
+    let events = eventsData.data || []
+
     const inProgressEvents = (e) => {
         const date = new Date()
         const year = date.getFullYear()
@@ -12,7 +16,7 @@ const EventsOptions = ({ setEventsData, searchEvent, setSearchEvent, eventsData 
         const eventOption = e.target.innerText
 
         switch (eventOption) {
-            case 'All':  getEvents(setEventsData)
+            case 'All': getEvents(setEventsData)
                 break;
 
             case 'In progress': setEventsData(events.filter(event => {
@@ -34,6 +38,10 @@ const EventsOptions = ({ setEventsData, searchEvent, setSearchEvent, eventsData 
     return <div className='eventsOptions-container'>
         <h1>Events</h1>
         <div className='options-container'>
+            <div className='eventsButtons-container'>
+                <Link to='/' className='createEvent-btn'>Create event</Link>
+                <Link to='/' className='createEvent-btn'>My events</Link>    
+            </div>
             <nav>
                 <ul onClick={(e) => inProgressEvents(e)}>
                     <li className='eventOption'> All </li>
