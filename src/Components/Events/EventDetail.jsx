@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { getEvent } from '../../util/httpEvents'
-import NotFound from '../Utils/NotFound'
 import '../../styles/Events/EventDetail.scss'
+import { useParams } from 'react-router-dom'
+import NotFound from '../Utils/NotFound'
+import UserForm from './UserForm'
+import { getEvent } from '../../util/httpEvents'
 
-const EventDetail = ({children}) => {
-    const [event, setEvent] = useState([])
+
+const EventDetail = ({ children }) => {
+    const [event, setEvent] = useState()
     let params = useParams()
     let { id } = params
 
-    useEffect(()=>{
-        getEvent(setEvent,id)
-    },[])
+    useEffect(() => {
+        getEvent(setEvent, id)
+        window.scrollTo(0, 0)
+    }, [])
 
-    return (
+    return event ?
         <>
             {children}
-            <main className='eventDetail-container'>
-                {event? 
-                   <h1>{event.name}</h1> 
-                :<NotFound name='Event'/>}
+            <main className='eventDetail-main'>
+                {event ? <UserForm preloadedValues={event} /> : <NotFound name='Event' />}
             </main>
-        </>
-    )
+        </> :
+        <div>Loading...</div>
 }
 
 export default EventDetail

@@ -26,7 +26,7 @@ const getEvent = async (setEvent, id) => {
         response = await response.json()
         setEvent(response.data)
     } catch (error) {
-        setEvent([])
+        setEvent()
     }
 }
 

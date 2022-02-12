@@ -1,8 +1,129 @@
-.eventDetail-container{
+.eventDetail-main{
+    padding: 10px;
     display: flex;
-    margin-top: 2rem;
+    color: black;
+    background-color: rgb(241, 241, 241);
+    height: 100vh;
 
-     h1{
-         color: black;
-     }
+    .eventForm{
+        display: flex;
+        flex-direction: column;
+        .eventName{
+            border: none;
+            font-size: 55px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 1rem;
+            background-color: rgb(241, 241, 241);
+            margin: 0;
+            color: black;
+        }
+    
+        .eventOptions-container{
+            display: flex;
+            gap: 95px;
+            justify-content: center;
+            align-items: center;
+    
+            .optionEvent{
+                cursor: pointer;
+                font-size: 25px;
+                transition: 0.4s;
+                color: rgb(56, 55, 55);
+            }
+        
+            .optionEvent:hover{
+                font-size: 30px;
+                color: black;
+            }
+    
+        }
+    
+    
+        .eventDetailInfo-container{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            padding: 2rem;
+            margin-top: 1rem;
+            -webkit-box-shadow: 2px 8px 18px 4px rgba(0,0,0,0.76); 
+            box-shadow: 2px 8px 18px 4px rgba(0,0,0,0.76);
+            border-radius: 5px;
+    
+            hr{
+                height: 220px;
+                margin: 0 auto;
+            }
+    
+    
+            .save-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;   
+
+                .saveBtn{
+                    font-size: 20px;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                }         
+               
+                .save{
+                    font-size: 40px;
+                    transition: 0.4s;
+                    
+                }
+        
+                 .save:hover{
+                    font-size: 50px;
+                }
+            }
+
+            .save-containerOff{
+                display: none;
+            }
+    
+            .eventImg-container{
+                input{
+                    display: none;
+                }
+                img{
+                    width: 250px;
+                    height: 175px;
+                    object-fit: fill;
+                }
+            }
+    
+            .info-container{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                label{
+                    font-weight: 900;
+                }
+               
+                input{
+                    border: none;
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                    background-color: transparent;
+                    margin-top: 5px;
+                    width: 550px;
+                    color: black;
+                }
+            }
+        }
+    }
+
+   
+}
+
+input {
+    cursor: auto;
 }
