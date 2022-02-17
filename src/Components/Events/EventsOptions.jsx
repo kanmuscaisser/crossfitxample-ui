@@ -9,10 +9,7 @@ const EventsOptions = () => {
     let events = eventsData.data || []
 
     const inProgressEvents = (e) => {
-        const date = new Date()
-        const year = date.getFullYear()
-        const currentDay = date.getDate()
-        const month = date.getMonth() + 1
+        const actualDate = new Date().getTime()
         const eventOption = e.target.innerText
 
         switch (eventOption) {
@@ -20,27 +17,25 @@ const EventsOptions = () => {
                 break;
 
             case 'In progress': setEventsData(events.filter(event => {
-                const date = event.date.split('/')
-                if (date[0] === currentDay && date[1] === month && date[2] === year) {
-                    return event
-                }
+                const date = new Date(event.date).getTime()
+                if (date <= actualDate) return event
             }))
                 break;
 
             case 'Upcoming': setEventsData(events.filter(event => {
-                const date = event.date.split('/')
-                if (date[0] > currentDay && date[1] > month && date[2] > year) {
-                    return event
-                }
+                const date = new Date(event.date).getTime()
+                if (date > actualDate) return event
             }))
+                break;
         }
     }
+
     return <div className='eventsOptions-container'>
         <h1>Events</h1>
         <div className='options-container'>
             <div className='eventsButtons-container'>
-                <Link to='/' className='createEvent-btn'>Create event</Link>
-                <Link to='/' className='createEvent-btn'>My events</Link>    
+                <Link to='/create-event' className='createEvent-btn'>Create event</Link>
+                <Link to='/' className='createEvent-btn'>My events</Link>
             </div>
             <nav>
                 <ul onClick={(e) => inProgressEvents(e)}>

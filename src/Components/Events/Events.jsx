@@ -5,14 +5,14 @@ import '../../styles/Events/Events.scss'
 import '../../styles/Events/Mobile.scss'
 import EventsOptions from './EventsOptions';
 
-const Events = () => {   
+const Events = () => {
   return (
     <>
       <main className='events-Main'>
-        <EventsOptions/>
-        <DisplayEvents         
+        <EventsOptions />
+        <DisplayEvents
           render={event => (
-            <Event event={event} key={event.id} />
+            <Event event={event} key={event._id} />
           )}
         />
       </main>

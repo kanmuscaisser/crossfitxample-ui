@@ -101,12 +101,12 @@
             .info-container{
                 display: flex;
                 flex-direction: column;
-                width: 100%;
+                width: auto;
 
                 label{
                     font-weight: 900;
                 }
-               
+                
                 input{
                     border: none;
                     font-size: 18px;
@@ -114,7 +114,7 @@
                     margin-bottom: 1rem;
                     background-color: transparent;
                     margin-top: 5px;
-                    width: 550px;
+                    width: auto;
                     color: black;
                 }
             }
