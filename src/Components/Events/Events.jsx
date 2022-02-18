@@ -1,29 +1,18 @@
-import React, {useState, useEffect} from 'react';
-import Header from '../MainPage/Header';
+import React from 'react';
 import Event from './Event';
 import DisplayEvents from './DisplayEvents';
-import '../../Styles/Events/Events.scss'
+import '../../styles/Events/Events.scss'
+import '../../styles/Events/Mobile.scss'
 import EventsOptions from './EventsOptions';
-import { getEvents } from '../../Util/httpEvents';
 
 const Events = () => {
-  const [searchEvent, setSearchEvent] = useState([])
-  const [eventsData, setEventsData] = useState([])
-  
-  useEffect(() => {
-    getEvents(setEventsData)
-  }, [])
- 
   return (
     <>
-      <Header />
       <main className='events-Main'>
-        <EventsOptions setEventsData={setEventsData} searchEvent={searchEvent} setSearchEvent={setSearchEvent} eventsData={eventsData} />
+        <EventsOptions />
         <DisplayEvents
-          searchEvent={searchEvent}
-          events={eventsData}
           render={event => (
-            <Event event={event} key={event.id} />
+            <Event event={event} key={event._id} />
           )}
         />
       </main>

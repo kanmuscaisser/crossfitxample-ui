@@ -1,18 +1,20 @@
-import React from 'react';
-import '../../Styles/Events/Display.scss'
+import React, { useContext } from 'react';
+import '../../styles/Events/Display.scss'
 import NotFound from '../Utils/NotFound';
+import EventsDataContext from '../../context/context.js';
 
-const DisplayEvents = (props) => {
-    let events = props.events.data || []
+const DisplayEvents = ({ render }) => {
+    const { searchEvent, eventsData } = useContext(EventsDataContext)
+    let events = eventsData.data || []
     events = findEvent(events)
     function findEvent(events) {
-        return events.filter(event => event.name.toLowerCase().indexOf(props.searchEvent.toString().toLowerCase()) > -1 ||
-            event.country.toLowerCase().indexOf(props.searchEvent.toString().toLowerCase()) > -1 ||
-            event.address.toLowerCase().indexOf(props.searchEvent.toString().toLowerCase()) > -1)
+        return events.filter(event => event.name.toLowerCase().indexOf(searchEvent.toString().toLowerCase()) > -1 ||
+            event.country.toLowerCase().indexOf(searchEvent.toString().toLowerCase()) > -1 ||
+            event.address.toLowerCase().indexOf(searchEvent.toString().toLowerCase()) > -1)
     }
 
     return <section className='display-section'>
-        {events.length !== 0 ? events.map(event => props.render(event)) : <NotFound name='Events' />}
+        {events.length !== 0 ? events.map(event => render(event)) : <NotFound name='Events' />}
     </section>
 };
 

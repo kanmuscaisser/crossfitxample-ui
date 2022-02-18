@@ -1,0 +1,36 @@
+@media screen and (max-width:850px) {
+
+.search-container input {
+    border-radius: 5px;
+    font-size: 20px;
+    max-width: 300px;
+    background-position-x: 15rem !important;
+}
+
+.events-Main .eventsOptions-container {
+    width: 100%;
+    margin-top: 4rem;
+    .options-container {
+        margin-top: 3rem;
+        nav > ul > li{
+            padding: 0;
+            font-size: 20px;
+            margin: 0 10px;
+        }
+    }
+} 
+
+.event-title {
+   display: block;
+}
+
+.display-section {
+    box-shadow: none;
+    max-width: 100%;
+    justify-items: center;
+
+    .event-card{
+        max-width: 300px;
+    }
+}
+}
