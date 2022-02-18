@@ -16,18 +16,14 @@ const UserForm = ({ preloadedValues, id }) => {
         defaultValues: preloadedValues
     })
 
-    const onSubmit = eventData => {
-        putEvent(setResponse, id, eventData)
-    }
-
+    const onSubmit = eventData => putEvent(setResponse, id, eventData)
 
     const onDelete = id => deleteEventAlert(setResponse, id, navigate)
-
 
     if (response) {
         if (response.includes('updated')) {
             putPostEventAlert(response, navigate)
-        }       
+        }
     }
 
     return (<>

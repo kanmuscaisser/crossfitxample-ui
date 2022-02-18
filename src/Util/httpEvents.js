@@ -29,10 +29,10 @@ const getEvent = async (setEvent, id) => {
 }
 
 
- /* PUT */ 
+/* PUT */
 const putEvent = async (setResponse, id, eventData) => {
-    if(!eventData.photo) delete eventData.photo
-    if(!eventData.discipline) delete eventData.discipline
+    if (!eventData.photo) delete eventData.photo
+    if (!eventData.discipline) delete eventData.discipline
     delete eventData._id
     requestOptions.method = 'PUT'
     requestOptions.body = JSON.stringify(eventData)
@@ -43,13 +43,13 @@ const putEvent = async (setResponse, id, eventData) => {
 
     } catch (error) {
         setResponse(error)
-    } 
+    }
 }
 
 /* POST */
-const postEvent =  async (setResponse, newEvent)=>{
-    if(newEvent.photo.length === 0) delete newEvent.photo
-    if(!newEvent.discipline) delete newEvent.discipline
+const postEvent = async (setResponse, newEvent) => {
+    if (newEvent.photo.length === 0) delete newEvent.photo
+    if (!newEvent.discipline) delete newEvent.discipline
     requestOptions.method = 'POST'
     requestOptions.body = JSON.stringify(newEvent)
     try {
@@ -68,13 +68,18 @@ const deleteEvent = async (setResponse, id) => {
     requestOptions.method = 'DELETE'
     requestOptions.mode = 'cors'
     requestOptions.body = ''
+    let res = false
     try {
-        let response = await fetch(`${API}/${id}`,requestOptions)
-        response =  await response.json()
+        let response = await fetch(`${API}/${id}`, requestOptions)
+        response = await response.json()
         setResponse(response.message)
+        if (response.message.includes('deleted')) {
+            res = true
+        }
     } catch (error) {
         setResponse(error)
     }
-} 
+    return res
+}
 
-export { getEvents, getEvent, putEvent, postEvent, deleteEvent}
+export { getEvents, getEvent, putEvent, postEvent, deleteEvent }
