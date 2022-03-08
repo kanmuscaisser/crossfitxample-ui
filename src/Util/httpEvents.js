@@ -63,7 +63,7 @@ const postEvent = async (setResponse, newEvent) => {
 
 
 
-
+/* DELETE */
 const deleteEvent = async (setResponse, id) => {
     requestOptions.method = 'DELETE'
     requestOptions.mode = 'cors'

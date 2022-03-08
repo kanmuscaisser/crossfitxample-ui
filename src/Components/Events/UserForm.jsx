@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
@@ -11,24 +11,38 @@ import { putPostEventAlert, deleteEventAlert } from '../../util/eventAlerts'
 const UserForm = ({ preloadedValues, id }) => {
     const [edit, setEdit] = useState(true)
     const [response, setResponse] = useState(null)
+    const [saveData, setSaveData] = useState({})
     const navigate = useNavigate()
-    const { register, handleSubmit } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: preloadedValues
     })
 
-    const onSubmit = eventData => putEvent(setResponse, id, eventData)
-
+    const onSubmit = eventData => {
+        setSaveData(eventData)
+        putEvent(setResponse, id, eventData)
+    }
     const onDelete = id => deleteEventAlert(setResponse, id, navigate)
 
-    if (response) {
-        if (response.includes('updated')) {
-            putPostEventAlert(response, navigate)
+    const setSaveEdit = () => {
+        if (saveData.country && saveData.address && saveData.date && saveData.director && saveData.name) {
+            setEdit(!edit)
         }
     }
+
+    useEffect(() => {
+        if (response) {
+            if (response.includes('updated')) {
+                putPostEventAlert(response, navigate)
+            }
+        }
+    }, [response])
+
 
     return (<>
         <form onSubmit={handleSubmit(onSubmit)} className='eventForm'>
             <input className='eventName' {...register('name', { required: true })} type='text' readOnly={edit} disabled={edit} />
+            {errors?.name?.type === 'required' && <p className='errorMessage'>Name is required</p>}
+
             <div className='eventOptions-container'>
                 <p className='optionEvent' onClick={() => setEdit(!edit)}>Edit<AiOutlineEdit /></p>
                 <p className='optionEvent' onClick={() => onDelete(id)}>Delete  <AiOutlineDelete /></p>
@@ -49,26 +63,33 @@ const UserForm = ({ preloadedValues, id }) => {
                     <div className='input-container'>
                         <label>Country: </label>
                         <input className='eventCountry' {...register('country', { required: true })} readOnly={edit} disabled={edit} />
+                        {errors?.country?.type === 'required' && <p className='errorMessage'>Country is required</p>}
                     </div>
 
                     <div className='input-container'>
                         <label>Address: </label>
                         <input className='eventAdress' {...register('address', { required: true })} readOnly={edit} disabled={edit} />
+                        {errors?.address?.type === 'required' && <p className='errorMessage'>Address is required</p>}
+
                     </div>
 
                     <div className='input-container'>
                         <label>Date: </label>
                         <input className='eventDate' type='date' {...register('date', { required: true })} readOnly={edit} disabled={edit} />
+                        {errors?.date?.type === 'required' && <p className='errorMessage'>Date is required</p>}
+
                     </div>
 
                     <div className='input-container'>
                         <label>Director: </label>
-                        <input className='eventDirector'  {...register('director')} readOnly={edit} disabled={edit} />
+                        <input className='eventDirector'  {...register('director', { required: true })} readOnly={edit} disabled={edit} />
+                        {errors?.director?.type === 'required' && <p className='errorMessage'>Director is required</p>}
+
                     </div>
 
                 </div>
                 <div className={edit ? 'save-containerOff' : 'save-container'}>
-                    <button onClick={() => setEdit(!edit)} className='saveBtn' type='submit'>Save<br /><BsSave className='save' /></button>
+                    <button onClick={() => setSaveEdit()} className='saveBtn' type='submit'>Save<br /><BsSave className='save' /></button>
                 </div>
             </div>
         </form>

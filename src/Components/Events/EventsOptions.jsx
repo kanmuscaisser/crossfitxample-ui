@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchEvent from './SearchEvent';
 import EventsDataContext from '../../context/context.js';
@@ -14,7 +14,7 @@ const EventsOptions = () => {
                 <Link to='/' className='createEvent-btn'>My events</Link>
             </div>
             <nav>
-                <ul onClick={(e) => setSearchForTime(e.target.innerText)}>
+                <ul onClick={(e) => setSearchForTime(e.target.innerText) }>
                     <li className='eventOption'> All </li>
                     <li className='eventOption'> In progress</li>
                     <li className='eventOption'> Upcoming</li>
