@@ -8,6 +8,14 @@
     .eventForm{
         display: flex;
         flex-direction: column;
+
+        .errorMessage{
+            color: red;
+            text-align: center;
+            margin: 0;
+        }
+
+
         .eventName{
             border: none;
             font-size: 55px;

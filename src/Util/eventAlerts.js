@@ -15,9 +15,11 @@ const putPostEventAlert = (response, navigate) => {
         showConfirmButton: false,
         timer: 3000,
     })
-    setTimeout(() => {
-        navigate('/events')
-    }, 1000)
+    if (response.includes('created') || response.includes('updated')) {
+        setTimeout(() => {
+            navigate('/events')
+        }, 1000)
+    }
 }
 
 const deleteEventAlert = (setResponse, id, navigate) => {
@@ -34,20 +36,36 @@ const deleteEventAlert = (setResponse, id, navigate) => {
             confirmButtonColor: 'black',
         }).then(response => {
             if (response.isConfirmed) {
-                deleteEvent(setResponse, id)
-                swal.fire({
-                    icon: 'success',
-                    text: 'Event Deleted',
-                    iconColor: 'black',
-                    title: 'Deleted',
-                    showConfirmButton: false,
-                    timer: 3000
+                const swalConfir = {
+                    icon: '',
+                    text: '',
+                    iconColor: '',
+                    title: '',
+                    timer: 0
+                }
+                deleteEvent(setResponse, id).then(response => {
+                    if(response){
+                        swalConfir.icon = 'success'
+                        swalConfir.text = 'Event Deleted'
+                        swalConfir.iconColor = 'black'
+                        swalConfir.title = 'Deleted'
+                        swalConfir.timer = 2000
+                        swalConfir.showConfirmButton = false
+                        swal.fire(swalConfir)
+                        setTimeout(() => {
+                            navigate('/events')
+                        }, 1000)
+                    }else{
+                        swalConfir.icon = 'error'
+                        swalConfir.text = 'Something went wrong'
+                        swalConfir.iconColor = 'red'
+                        swalConfir.title = 'Not deleted'
+                        swalConfir.timer = 2000
+                        swal.fire(swalConfir)
+                    }
                 })
-                setTimeout(() => {
-                    navigate('/events')
-                }, 1000)
+                
             }
-            //error alert must be builded
         })
     }
 }
